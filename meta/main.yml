@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Karol Ossowski
+  description: Nginx as static files server for Django app
+  license: BSD
+
+  min_ansible_version: 1.2
+
+  platforms:
+  - name: Debian
+    versions:
+    - all
+
+  galaxy_tags: [nginx, static, media, django, debian]
+
+dependencies:
+  - role: nginx_base

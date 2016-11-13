@@ -1,0 +1,22 @@
+server {
+    listen {{ http_port }};
+    server_name 0.0.0.0 {{ domains|join(' ') }};
+
+    {% if ssl %}
+        ssl on;
+        ssl_certificate {{ cert_path }};
+        ssl_certificate_key {{ cert_key_path }};
+    {% endif %}
+
+    {% if static_root|default(False) %}
+        location {{ static_base_path }} {
+            alias {{ static_root }};
+        }
+    {% endif %}
+
+    {% if media_root|default(False) %}
+        location {{ media_base_path }} {
+            alias {{ media_root }};
+        }
+    {% endif %}
+}

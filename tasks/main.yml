@@ -1,0 +1,4 @@
+---
+- name: setup webserver
+  template: src=static.j2 dest='/etc/nginx/sites-enabled/{{ domain }}_static'
+  notify: reload webserver

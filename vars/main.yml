@@ -1,0 +1,5 @@
+---
+domain: '{{ domains|first() }}'
+
+cert_path: '{{ cert_base_path }}/{{ cert|basename }}'
+cert_key_path: '{{ cert_base_path }}/{{ cert_key|basename }}'

@@ -1,0 +1,10 @@
+---
+http_port: 80
+
+ssl: False
+cert: cert.pem
+cert_key: cert.key
+cert_base_path: /etc/ssl/certs
+
+media_base_path: /media
+static_base_path: /static
