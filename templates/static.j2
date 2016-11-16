@@ -12,6 +12,12 @@ server {
         location {{ static_base_path }} {
             alias {{ static_root }};
         }
+        expires 30d;
+        access_log  off;
+
+        location ~* \.(eot|woff|ttf|woff2|svg)$ {
+            add_header Access-Control-Allow-Origin *;
+        }
     {% endif %}
 
     {% if media_root|default(False) %}
