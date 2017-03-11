@@ -2,3 +2,4 @@
 - name: setup webserver
   template: src=static.j2 dest='/etc/nginx/sites-enabled/{{ fname }}'
   notify: reload nginx
+  tags: [webserver, upgrade]
